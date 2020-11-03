@@ -15,11 +15,17 @@ export const root = css`
 `;
 
 export const icon = css`
+  display: inline-block;
   font-size: 5rem;
+  margin-bottom: 20px;
 `;
 
 export const title = css`
-  margin-top: 20px;
+  font-size: 1.5rem;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1.334;
+  letter-spacing: 0em;
 `;
 
 export const subtitle = css`

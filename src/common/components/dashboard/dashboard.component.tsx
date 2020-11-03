@@ -16,14 +16,15 @@ interface Props {
   dataTestId?: string;
 }
 
-export const DashboardComponent: React.StatelessComponent<Props> = props => {
+export const DashboardComponent: React.FC<Props> = props => {
   const { items, classes, dataTestId } = props;
   return (
-    <div
+    <nav
       data-testid={dataTestId}
       className={cx(innerClasses.root, classes.root)}
+      aria-label="Main"
     >
-      <div className={cx(innerClasses.items, classes.items)}>
+      <ul className={cx(innerClasses.items, classes.items)}>
         {items.map(
           item =>
             Boolean(item) && (
@@ -37,8 +38,8 @@ export const DashboardComponent: React.StatelessComponent<Props> = props => {
               />
             )
         )}
-      </div>
-    </div>
+      </ul>
+    </nav>
   );
 };
 

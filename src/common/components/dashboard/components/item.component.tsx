@@ -18,32 +18,37 @@ interface Props {
   dataTestId?: string;
 }
 
-export const ItemComponent: React.StatelessComponent<Props> = props => {
+export const ItemComponent: React.FC<Props> = props => {
   const {
     item: { icon: Icon, title, linkTo, subtitle },
     classes,
     dataTestId,
   } = props;
   return (
-    <Link
-      className={cx(innerClasses.root, classes.root)}
-      to={linkTo}
-      data-testid={dataTestId}
-    >
-      <Icon className={cx(innerClasses.icon, classes.icon)} />
-      <Typography
-        variant="h5"
-        className={cx(innerClasses.title, classes.title)}
+    <li>
+      <Link
+        className={cx(
+          innerClasses.root,
+          classes.root,
+          innerClasses.title,
+          classes.title
+        )}
+        to={linkTo}
+        data-testid={dataTestId}
+        role="button"
+        // aria-label="main menu"
       >
+        <Icon className={cx(innerClasses.icon, classes.icon)} />
         {title}
-      </Typography>
-      <Typography
-        variant="h6"
-        className={cx(innerClasses.subtitle, classes.subtitle)}
-      >
-        {subtitle}
-      </Typography>
-    </Link>
+        <Typography
+          variant="h6"
+          component="span"
+          className={cx(innerClasses.subtitle, classes.subtitle)}
+        >
+          {subtitle}
+        </Typography>
+      </Link>
+    </li>
   );
 };
 

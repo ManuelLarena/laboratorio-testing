@@ -15,7 +15,7 @@ describe('ConfirmationDialogComponent component specs', () => {
         closeButton: 'test Close',
         acceptButton: 'test Accept',
       },
-      children: 'test description',
+      children: '<p>test description</p>',
     };
 
     // Act
@@ -54,7 +54,7 @@ describe('ConfirmationDialogComponent component specs', () => {
         closeButton: 'test Close',
         acceptButton: 'test Accept',
       },
-      children: 'test description',
+      children: '<p>test description</p>',
     };
 
     // Act
@@ -80,15 +80,15 @@ describe('ConfirmationDialogComponent component specs', () => {
         closeButton: 'test Close',
         acceptButton: 'test Accept',
       },
-      children: 'test description',
+      children: '<p>test description</p>',
     };
     // Act
     render(<ConfirmationDialogComponent {...props} />);
 
-    const handleOnAccept = screen.getByRole('button', {
+    const handleOnClose = screen.getByRole('button', {
       name: 'test Close',
     });
-    userEvent.click(handleOnAccept);
+    userEvent.click(handleOnClose);
 
     // Assert
     expect(props.onClose).toHaveBeenCalled();

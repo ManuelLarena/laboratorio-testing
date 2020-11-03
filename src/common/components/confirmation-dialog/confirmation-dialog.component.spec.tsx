@@ -15,7 +15,7 @@ describe('ConfirmationDialogComponent component specs', () => {
         closeButton: 'test Close',
         acceptButton: 'test Accept',
       },
-      children: 'test description',
+      children: '<p>test description</p>',
     };
 
     // Act
@@ -54,7 +54,7 @@ describe('ConfirmationDialogComponent component specs', () => {
         closeButton: 'test Close',
         acceptButton: 'test Accept',
       },
-      children: 'test description',
+      children: '<p>test description</p>',
     };
 
     // Act
@@ -80,7 +80,7 @@ describe('ConfirmationDialogComponent component specs', () => {
         closeButton: 'test Close',
         acceptButton: 'test Accept',
       },
-      children: 'test description',
+      children: '<p>test description</p>',
     };
     // Act
     render(<ConfirmationDialogComponent {...props} />);
